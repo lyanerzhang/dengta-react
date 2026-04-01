@@ -1,0 +1,211 @@
+.storeDetailContent {
+  width: 100%;
+  background-color: #f5f7fa;
+  overflow-y: auto;
+
+  .ft16 {
+    font-size: 16px;
+  }
+
+  .flexCenter {
+    display: flex;
+    align-items: center;
+  }
+
+  .sideBar {
+    height: 20px;
+    width: 4px;
+    border-radius: 2px;
+    background-color: #3867ff;
+  }
+
+  .dataTitle {
+    font-size: 18px;
+    color: rgba(8, 8, 10, 0.96);
+    font-weight: bold;
+    margin-left: 8px;
+  }
+
+  .dataTitleBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .updateText {
+      font-size: 16px;
+      color: #909399;
+    }
+
+    .refreshText {
+      padding-left: 8px;
+      color: #4c77b8;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: #3867ff;
+      }
+    }
+  }
+
+  .storeHeadImg {
+    width: 100%;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .storeInfo {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .storeNameHeader {
+      font-size: 18px;
+      font-weight: bold;
+      color: rgba(8, 8, 10, 0.96);
+    }
+
+    .storeAddrHeader {
+      margin-left: 10px;
+      font-size: 16px;
+      color: #909399;
+    }
+  }
+
+  .dateRadioBox {
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .onTimeData {
+    width: 100%;
+    padding: 28px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+
+  .dataOneItem {
+    margin-top: 22px;
+    padding-right: 20px;
+    border-right: 1px dotted #dcdfe6;
+    margin-right: 20px;
+
+    .itemTitle {
+      color: rgba(8, 8, 10, 0.8);
+      font-size: 16px;
+    }
+
+    .dataNum {
+      margin-top: 3px;
+      font-size: 24px;
+      font-family: "DIN Alternate Bold";
+      color: rgba(8, 8, 10, 0.8);
+    }
+
+    .deviceName {
+      font-size: 22px;
+      font-weight: 600;
+      color: rgba(8, 8, 10, 0.8);
+      margin-top: 3px;
+    }
+
+    .dataNumWarn {
+      color: #e72323;
+    }
+  }
+
+  .chartBox {
+    margin-top: 8px;
+    background-color: #fff;
+    padding: 28px;
+    border-radius: 8px;
+
+    .radioBtnBox {
+      :global(.ant-radio-button-wrapper) {
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-right: 8px;
+        font-weight: normal;
+        color: #606266;
+        background-color: #f5f7fa;
+
+        &::before {
+          display: none;
+        }
+
+        &:hover {
+          color: #3867ff;
+          background-color: rgba(56, 103, 255, 0.06);
+        }
+      }
+
+      :global(.ant-radio-button-wrapper-checked) {
+        color: #3867ff !important;
+        background-color: rgba(56, 103, 255, 0.06) !important;
+      }
+    }
+
+    .lineChart {
+      width: 100%;
+      height: 380px;
+    }
+  }
+
+  .dataTableBox {
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 28px;
+    background-color: #fff;
+    margin-bottom: 20px;
+
+    .tables {
+      :global(.ant-table-thead > tr > th) {
+        background: #f5f7fa;
+        color: rgba(8, 8, 10, 0.8);
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      :global(.ant-table-tbody > tr > td) {
+        font-size: 16px;
+        color: rgba(8, 8, 10, 0.96);
+      }
+    }
+  }
+
+  .numVal {
+    font-size: 18px;
+    color: rgba(8, 8, 10, 0.8);
+    font-family: "DIN Alternate Bold";
+  }
+
+  .noData {
+    color: rgba(144, 147, 153, 0.8);
+    font-family: inherit;
+  }
+
+  .red {
+    color: #e72323;
+  }
+
+  .moreFilled {
+    display: inline-flex;
+    color: #3867ff;
+    font-weight: bold;
+    line-height: 1px;
+    height: 8px;
+    font-size: 16px;
+    vertical-align: top;
+    position: relative;
+    top: 4px;
+    left: 1px;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+}

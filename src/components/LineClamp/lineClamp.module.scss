@@ -1,0 +1,51 @@
+.textEllipsis {
+  position: relative;
+  width: 100%;
+
+  .textContent {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    position: relative;
+  }
+
+  .textContentEllipsis {
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 50px;
+      height: 20px;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff 12%);
+      transition: background-color 0.3s ease;
+    }
+  }
+
+  .toggleBtn {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    color: #4c77b8;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+
+    &:hover {
+      color: #3867ff;
+    }
+  }
+
+  .toggleBtnHide {
+    display: inline-block;
+    color: #4c77b8;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+
+    &:hover {
+      color: #3867ff;
+    }
+  }
+}

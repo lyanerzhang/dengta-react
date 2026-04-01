@@ -1,0 +1,17 @@
+.dottedButton {
+  width: 120px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px dotted #4c77b8;
+  display: flex;
+  color: #4c77b8;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    color: #3867ff;
+    border: 1px dotted #3867ff;
+  }
+}

@@ -1,0 +1,1 @@
+import{V as t}from"./index-3Ej2XQmh.js";const e="_footerContent_tzjas_1",s="_infoText_tzjas_11",o={footerContent:e,infoText:s};function r({backgroundColor:n="transparent"}){return t.jsx("div",{className:o.footerContent,style:{background:n},children:t.jsx("span",{className:o.infoText,children:"苏ICP备2023019770号-7"})})}const c="/assets/headLogo-CFxaYRWL.png";export{r as F,c as h};

@@ -1,0 +1,1 @@
+import{V as e}from"./index-3Ej2XQmh.js";function i(){return e.jsxs("div",{style:{padding:40},children:[e.jsx("h2",{children:"厨芯用户服务协议 & 厨芯隐私政策"}),e.jsx("p",{children:"协议内容..."})]})}export{i as default};

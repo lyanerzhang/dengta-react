@@ -1,0 +1,62 @@
+// 数据看板通用样式
+@mixin dataOverView {
+  .dataOverView {
+    border-radius: 8px;
+    width: 100%;
+    padding: 28px;
+    background-color: #fff;
+
+    .dataTitleBox {
+      display: flex;
+      align-items: center;
+
+      .sideBar {
+        height: 20px;
+        width: 4px;
+        border-radius: 2px;
+        background-color: #3867ff;
+      }
+    }
+
+    .dataTitle {
+      font-size: 18px;
+      color: rgba(8, 8, 10, 0.96);
+      font-weight: bold;
+      margin-left: 8px;
+    }
+  }
+}
+
+@mixin dataCategory {
+  .dataCategory {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+
+    .data {
+      border-right: 1px dotted #dcdfe6;
+      padding-right: 20px;
+      margin-right: 20px;
+
+      .title {
+        color: rgba(8, 8, 10, 0.8);
+        font-size: 16px;
+      }
+
+      .dataNum {
+        font-family: "DIN Alternate Bold";
+        font-size: 24px;
+        margin-top: 5px;
+        color: rgba(8, 8, 10, 0.8);
+      }
+
+      .dataNumGrey {
+        color: #c0c2cc;
+      }
+    }
+
+    .data:last-child {
+      border-right: none;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.radioBtn {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  flex-direction: row;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  background-color: #fff;
+
+  .radioItem {
+    padding: 6px 16px;
+    color: #606266;
+    font-size: 14px;
+    border-right: 1px solid #dcdfe6;
+
+    &:hover {
+      color: #3867ff;
+    }
+  }
+
+  .isActive {
+    color: #3867ff;
+    background-color: rgba(56, 103, 255, 0.05);
+  }
+
+  .radioItemIcon {
+    width: 50px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: #3867ff;
+    }
+  }
+
+  .dateBox {
+    position: absolute;
+    left: 265px;
+  }
+}

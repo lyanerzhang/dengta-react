@@ -1,0 +1,169 @@
+.realTimeDataContainer {
+  width: 100%;
+  background-color: #f5f7fa;
+  padding: 8px 8px 0 8px;
+
+  .flexCenter {
+    display: flex;
+    align-items: center;
+  }
+
+  .dataTitleBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .sideBar {
+      height: 20px;
+      width: 4px;
+      border-radius: 2px;
+      background-color: #3867ff;
+    }
+
+    .dataTitle {
+      font-size: 18px;
+      color: rgba(8, 8, 10, 0.96);
+      font-weight: bold;
+      margin-left: 8px;
+    }
+
+    .updateText {
+      font-size: 16px;
+      color: #909399;
+    }
+
+    .refreshText {
+      padding-left: 8px;
+      color: #4c77b8;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: #3867ff;
+      }
+    }
+  }
+
+  .realTimeDataTable {
+    border-radius: 8px;
+    width: 100%;
+    min-height: calc(100vh - 300px);
+    background-color: #fff;
+    padding: 28px;
+
+    .checkBtnBox {
+      display: flex;
+      gap: 8px;
+    }
+
+    .checkBtn {
+      :global(.ant-checkbox) {
+        display: none;
+      }
+
+      :global(.ant-checkbox-wrapper) {
+        padding: 6px 16px;
+        border-radius: 4px;
+        font-size: 16px;
+        color: #606266;
+        background-color: #f5f7fa;
+        border: none;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          color: #3867ff;
+          background-color: rgba(56, 103, 255, 0.06);
+        }
+      }
+
+      &:global(.ant-checkbox-wrapper-checked) {
+        color: #3867ff;
+        background-color: rgba(56, 103, 255, 0.06);
+      }
+
+      span:last-child {
+        padding: 6px 16px;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: #f5f7fa;
+      }
+    }
+
+    .filterRow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      gap: 12px;
+    }
+
+    .filterItem {
+      display: flex;
+      align-items: center;
+
+      .filterTitle {
+        flex: 0 0 auto;
+        color: rgba(8, 8, 10, 0.8);
+        font-size: 16px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .tables {
+    width: 100%;
+    margin-top: 24px;
+
+    :global(.ant-table-thead > tr > th) {
+      background: #f5f7fa;
+      color: rgba(8, 8, 10, 0.8);
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    :global(.ant-table-tbody > tr > td) {
+      font-size: 16px;
+      padding: 16px 8px;
+      color: rgba(8, 8, 10, 0.8);
+    }
+  }
+
+  .storeName {
+    font-size: 16px;
+    color: #3867ff;
+  }
+
+  .storeAddr {
+    font-size: 14px;
+    color: #909399;
+    line-height: 20px;
+  }
+
+  .numericalValue {
+    font-size: 18px;
+    color: rgba(8, 8, 10, 0.8);
+    font-family: "DIN Alternate Bold";
+  }
+
+  .noData {
+    color: rgba(144, 147, 153, 0.8);
+  }
+
+  .red {
+    color: #e72323;
+  }
+
+  .aftersaleTitle {
+    font-size: 16px;
+    color: #303133;
+    margin-right: 10px;
+  }
+
+  .pageClass {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}

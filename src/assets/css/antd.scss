@@ -1,0 +1,59 @@
+// Ant Design 全局样式覆盖 (对应原项目 element.scss)
+
+$primary-color: #3867ff;
+$success-color: #03875f;
+$success-bg: #f3f9f7;
+$error-color: #e72323;
+$error-bg: #fef7f7;
+
+// 全局 message 样式
+.ant-message-success .ant-message-custom-content {
+  color: $success-color;
+  font-weight: 500;
+}
+
+.ant-message-error .ant-message-custom-content {
+  color: $error-color;
+  font-weight: 500;
+}
+
+// 全局 spin / loading 颜色
+.ant-spin-dot-item {
+  background-color: $primary-color;
+}
+
+// 全局 modal 标题字体
+.ant-modal-title {
+  font-family: PingFangSC-Regular, PingFang SC;
+}
+
+// 全局 tooltip 字体
+.ant-tooltip-inner {
+  font-family: PingFangSC-Regular, PingFang SC;
+}
+
+// 分页器选中态
+.ant-pagination-item-active {
+  border-color: $primary-color;
+
+  a {
+    color: $primary-color;
+  }
+}
+
+.ant-pagination-item:hover {
+  border-color: $primary-color;
+
+  a {
+    color: $primary-color;
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .ant-message-notice-content {
+    min-width: 90% !important;
+    max-width: 95% !important;
+    font-size: 14px;
+  }
+}
