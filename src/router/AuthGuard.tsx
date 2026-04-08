@@ -34,6 +34,10 @@ export default function AuthGuard({ children }: AuthGuardProps) {
             navigate("/userLogin", { replace: true })
           }
         } else {
+          const st = useAppStore.getState()
+          if (st.isIntelligentWashUser === null) {
+            await getIsIntelligentWashUser()
+          }
           setReady(true)
           if (location.pathname === "/userLogin") {
             const redirect = getRedirectPath(useAppStore.getState().menuPermission)

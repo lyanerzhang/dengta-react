@@ -45,8 +45,9 @@ export default function DeviceRealTimeData() {
     try {
       const choices = abnormalRef.current.includes(-1) ? [5, 6, 7] : abnormalRef.current
       const res: any = await getWishdasherLastestReport({
-        store_id: storeIdRef.current || undefined,
-        city_id: cityIdRef.current || undefined,
+        // 与 dengta-pc 一致：未选时传空字符串，避免 axios 省略参数导致与 mock/后端行为不一致
+        store_id: storeIdRef.current ?? "",
+        city_id: cityIdRef.current ?? "",
         abnormal_choices: JSON.stringify(choices),
         page_no: pn,
         page_size: pageRef.current.pageSize,

@@ -1,0 +1,329 @@
+.page {
+  width: 100%;
+  background: #f5f7fa;
+  padding: 8px 8px 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 28px;
+  margin-bottom: 0;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+}
+
+.sideBar {
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  background: #3867ff;
+}
+
+.cardTitle {
+  margin: 0 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(8, 8, 10, 0.96);
+}
+
+.updateText {
+  font-size: 16px;
+  color: #909399;
+}
+
+.dataCategory {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.dataCol {
+  border-right: 1px dotted #dcdfe6;
+  padding-right: 20px;
+  margin-right: 20px;
+  margin-bottom: 8px;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.dataTitle {
+  color: rgba(8, 8, 10, 0.8);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dataNum {
+  font-family: "DIN Alternate Bold", "Helvetica Neue", sans-serif;
+  font-size: 24px;
+  margin-top: 5px;
+  color: rgba(8, 8, 10, 0.8);
+}
+
+.dataNumGrey {
+  color: #c0c2cc;
+}
+
+.dataNumSmall {
+  font-family: "DIN Alternate Bold", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  margin-right: 2px;
+}
+
+.intellWashTip {
+  margin-top: 4px;
+  width: 98px;
+  height: 28px;
+  background: linear-gradient(221deg, #ff7e00 0%, #ff4d38 100%);
+  border-radius: 14px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.lockIcon {
+  color: #909399;
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+  margin-left: 4px;
+}
+
+.lockInline {
+  color: #909399;
+  margin-left: 4px;
+}
+
+.tooltipExtra {
+  font-size: 12px;
+}
+
+.muted {
+  color: #909399;
+}
+
+.dataChartWrap {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+/* 与 dengta-pc .data-content / .data-pie 一致，保证饼图引导线+标签有足够横向空间 */
+.dataContent {
+  flex: 1;
+  min-width: 522px;
+  min-height: 426px;
+  margin-right: 4px;
+}
+
+.pieArea {
+  box-sizing: border-box;
+  background: #f7f8fa;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 28px;
+  min-width: 522px;
+  width: 100%;
+  min-height: 184px;
+  overflow: visible;
+}
+
+.pieChart {
+  width: 100% !important;
+  min-width: 522px;
+  height: 184px;
+  min-height: 184px;
+}
+
+.chartPlaceholder {
+  width: 100%;
+  min-height: 184px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #909399;
+  font-size: 14px;
+  background: #f7f8fa;
+  border-radius: 4px;
+}
+
+.dataSituation {
+  display: flex;
+  min-height: 234px;
+  margin-top: 8px;
+  background: #f7f8fa;
+  border-radius: 4px;
+  border: 1px solid #f2f4f7;
+}
+
+.dataSituationItem {
+  flex: 0 0 50%;
+  padding: 24px 0 24px 24px;
+  box-sizing: border-box;
+}
+
+.situationTitle {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgba(8, 8, 10, 0.96);
+  margin-bottom: 12px;
+}
+
+.riskIconEmoji {
+  font-size: 20px;
+  margin-right: 6px;
+  color: rgba(8, 8, 10, 0.65);
+}
+
+.situationLine {
+  width: 100%;
+  max-width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: rgba(8, 8, 10, 0.8);
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.lineChartTitle {
+  font-weight: 400;
+  font-size: 16px;
+  color: #909399;
+  margin-top: 24px;
+}
+
+.lineChart {
+  height: 330px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 24px;
+}
+
+.dataIndicators {
+  min-height: 426px;
+  display: flex;
+  flex: 1;
+  min-width: 280px;
+  margin-left: 4px;
+}
+
+.indicatorBox {
+  height: 100%;
+  min-height: 320px;
+  padding: 24px;
+  border-radius: 4px;
+  flex: 1;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.indicatorRisk {
+  background: rgba(231, 35, 35, 0.02);
+  border: 1px solid rgba(231, 35, 35, 0.04);
+  margin-right: 4px;
+
+  .indicatorTitle {
+    color: #e72323;
+  }
+}
+
+.indicatorGood {
+  background: rgba(3, 135, 95, 0.03);
+  border: 1px solid rgba(3, 135, 95, 0.05);
+  margin-left: 4px;
+
+  .indicatorTitle {
+    color: #03875f;
+  }
+}
+
+.indicatorTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.indicatorContent {
+  font-size: 16px;
+  color: rgba(8, 8, 10, 0.8);
+  line-height: 24px;
+}
+
+.storeRow {
+  margin-bottom: 6px;
+}
+
+.storeNameEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 160px;
+}
+
+.detailOpt {
+  color: #4c77b8;
+  font-size: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px 0 0;
+  display: block;
+
+  &:hover {
+    color: #3867ff;
+  }
+}
+
+.noStore {
+  color: #909399;
+}
+
+@media (max-width: 1200px) {
+  .dataChartWrap {
+    flex-direction: column;
+  }
+
+  .dataIndicators {
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+  .dataContent {
+    margin-right: 0;
+  }
+}

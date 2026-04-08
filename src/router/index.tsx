@@ -34,6 +34,7 @@ const ElecMonitorStoreList = lazy(() => import("@/views/energyManage/ElecMonitor
 const ElecMonitorStoreDetail = lazy(() => import("@/views/energyManage/ElecMonitorStoreDetail"))
 
 const BbqgrillRunningData = lazy(() => import("@/views/bbqgrill/RunningData"))
+const DengtaDemo = lazy(() => import("@/views/dishwasher/DengtaDemo"))
 
 function LazyLoad({ children }: { children: React.ReactNode }) {
   return (
@@ -77,6 +78,11 @@ export const routes: AppRouteObject[] = [
       </AuthGuard>
     ),
     children: [
+      {
+        path: "dengtaDemo",
+        element: <LazyLoad><DengtaDemo /></LazyLoad>,
+        meta: { permissions: ["DENGTA_DEMO"] },
+      },
       {
         path: "deviceRealTimeData",
         element: <LazyLoad><DeviceRealTimeData /></LazyLoad>,
@@ -189,4 +195,8 @@ export const routes: AppRouteObject[] = [
   { path: "*", element: <Navigate to="/" replace /> },
 ]
 
-export const router = createBrowserRouter(routes)
+/** 与 dengta-pc `createWebHistory` 的 `/demo` base 一致：体验版地址为 `/demo/userData/...` */
+const routerBasename =
+  typeof window !== "undefined" && window.location.pathname.includes("/demo") ? "/demo" : undefined
+
+export const router = createBrowserRouter(routes, routerBasename ? { basename: routerBasename } : {})

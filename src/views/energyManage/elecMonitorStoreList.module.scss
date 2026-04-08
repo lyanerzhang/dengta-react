@@ -1,0 +1,139 @@
+.elecMonitorStoreList {
+  width: 100%;
+  background-color: #f5f7fa;
+  padding: 8px 8px 16px;
+  box-sizing: border-box;
+}
+
+.dataTable {
+  margin-top: 8px;
+  border-radius: 8px;
+  width: 100%;
+  min-height: calc(100vh - 300px);
+  background-color: #fff;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.dataTitleBox {
+  display: flex;
+  align-items: center;
+
+  .sideBar {
+    height: 20px;
+    width: 4px;
+    border-radius: 2px;
+    background-color: #3867ff;
+  }
+
+  .dataTitle {
+    font-size: 18px;
+    color: rgba(8, 8, 10, 0.96);
+    font-weight: bold;
+    margin-left: 8px;
+    margin-bottom: 0;
+  }
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 14px;
+  gap: 12px 20px;
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+
+  .filterTitle {
+    flex: 0 0 auto;
+    color: rgba(8, 8, 10, 0.8);
+    font-size: 16px;
+    margin-right: 8px;
+  }
+}
+
+.searchBtn {
+  color: #fff;
+  font-size: 16px;
+  height: 32px;
+  padding: 0 18px;
+}
+
+.resetBtn {
+  color: #606266;
+  font-size: 16px;
+  border: 1px solid #dcdfe6;
+  margin-left: 8px;
+  height: 32px;
+  padding: 0 18px;
+}
+
+.tables {
+  margin-top: 24px;
+
+  :global(.ant-table-thead > tr > th) {
+    background: #f5f7fa !important;
+    color: rgba(8, 8, 10, 0.8);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  :global(.ant-table-cell) {
+    font-size: 16px;
+    color: rgba(8, 8, 10, 0.8);
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+
+.storeName {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3867ff;
+  text-align: left;
+  cursor: pointer;
+  margin: 0;
+}
+
+.storeAddr {
+  font-size: 14px;
+  font-weight: 400;
+  color: #909399;
+  margin: 0;
+}
+
+.number {
+  font-family: "DIN Alternate Bold", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  color: rgba(8, 8, 10, 0.8);
+  line-height: 20px;
+}
+
+.monitorStatus {
+  color: #03875f;
+}
+
+.historyMonitor {
+  color: #08080a;
+}
+
+.pageClass {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.headerTip {
+  margin-left: 4px;
+  cursor: help;
+  color: #4c77b8;
+  font-size: 14px;
+  transform: translateY(-1px);
+}
+
+.headerTipActive {
+  color: #3867ff;
+}

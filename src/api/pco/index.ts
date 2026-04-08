@@ -12,8 +12,13 @@ export function getPcoStoreStandardList(params: any): any {
   return request({ url: "/ec/itr/ticket/get/store/standard_list", params, method: "get", noLoading: true } as any)
 }
 
-export function getPcoServiceOverviewStats(params: any): any {
-  return request({ url: "/ec/iotdm/pco/get/service_overview/stats", params, method: "get", noLoading: true } as any)
+export function getPcoServiceOverviewStats(params?: any): any {
+  return request({
+    url: "/ec/iotdm/pco/get/service_overview/stats",
+    params,
+    method: "get",
+    noLoading: true,
+  } as any)
 }
 
 export function getPcoIntelligentMonitorStats(params: any): any {

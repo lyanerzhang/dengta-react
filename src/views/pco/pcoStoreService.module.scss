@@ -1,0 +1,239 @@
+.pcoServiceInfo {
+  width: 100%;
+  background-color: #f5f7fa;
+  padding: 8px 8px 16px 8px;
+  box-sizing: border-box;
+}
+
+.serviceTable {
+  margin-top: 8px;
+  border-radius: 8px;
+  width: 100%;
+  background-color: #fff;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.dataTitleBox {
+  display: flex;
+  align-items: center;
+  .sideBar {
+    height: 20px;
+    width: 4px;
+    border-radius: 2px;
+    background-color: #3867ff;
+  }
+  .dataTitle {
+    font-size: 18px;
+    color: rgba(8, 8, 10, 0.96);
+    font-weight: bold;
+    margin-left: 8px;
+    margin-bottom: 0;
+  }
+}
+
+/* 与 PC 一致：整行统一上边距，避免日期条与输入框/按钮垂直错位 */
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 16px;
+  margin-top: 24px;
+}
+
+.filterDate {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+  .filterTitle {
+    flex: 0 0 auto;
+    color: rgba(8, 8, 10, 0.8);
+    font-size: 16px;
+    margin-right: 8px;
+    line-height: 32px;
+  }
+  /* 与标签、按钮同一基线 */
+  :global(.ant-select),
+  :global(.ant-select-selector),
+  :global(.ant-input-affix-wrapper),
+  :global(.ant-input) {
+    font-size: 14px;
+  }
+}
+
+.searchBtn {
+  height: 32px;
+  padding: 0 18px;
+  line-height: 30px;
+}
+
+.resetBtn {
+  height: 32px;
+  padding: 0 18px;
+  line-height: 30px;
+  border-color: #dcdfe6;
+  color: rgba(8, 8, 10, 0.85);
+  background: #fff;
+}
+
+.tables {
+  margin-top: 24px;
+
+  :global(.ant-table) {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  :global(.ant-table-thead > tr > th) {
+    background: #f5f7fa !important;
+    color: rgba(8, 8, 10, 0.8);
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid #ebeef5;
+    padding: 12px 16px;
+  }
+
+  :global(.ant-table-tbody > tr > td) {
+    padding: 12px 16px;
+    font-size: 16px;
+    border-color: #ebeef5;
+  }
+
+  :global(.ant-table-cell) {
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  :global(.ant-empty-description) {
+    color: rgba(8, 8, 10, 0.45);
+  }
+}
+
+.storeName {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(8, 8, 10, 0.8);
+}
+
+.serviceType {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.serviceReport {
+  color: #3867ff;
+  cursor: pointer;
+}
+
+.pageClass {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.deviceImageBox {
+  width: 100%;
+  border: 1px solid #ebeef5;
+  margin-top: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.imageHeader {
+  background-color: #f5f7fa;
+  border-bottom: 1px solid #ebeef5;
+  font-size: 16px;
+  color: rgba(8, 8, 10, 0.96);
+  font-weight: bold;
+  height: 44px;
+  padding: 0 16px;
+  line-height: 44px;
+}
+
+.devicePosition {
+  color: rgba(8, 8, 10, 0.8);
+  font-size: 16px;
+  padding: 16px 16px 0 16px;
+}
+
+.imgWarp {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 16px;
+}
+
+.imgBox {
+  width: 124px;
+  margin: 16px 8px 0 8px;
+  position: relative;
+}
+
+.imgItem {
+  width: 124px;
+  height: 92px;
+  cursor: pointer;
+  border: 1px solid #ebeef5;
+  object-fit: contain;
+}
+
+.imgDesc {
+  font-size: 16px;
+  color: #909399;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.warnTag {
+  width: 96px;
+  height: 24px;
+  background: #e72323;
+  border-radius: 2px;
+  border: 1px solid #e72323;
+  display: flex;
+  position: absolute;
+  top: 54px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.iconBox {
+  width: 25px;
+  height: 22px;
+  line-height: 19px;
+  background: #e72323;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+.tagText {
+  font-size: 14px;
+  color: #e72323;
+  font-weight: bold;
+  flex: 1;
+  height: 22px;
+  line-height: 22px;
+  background: #fff;
+  text-align: center;
+}
+
+.notData {
+  padding: 16px 0;
+  text-align: center;
+}
+
+.emptyWrap {
+  margin-top: 80px;
+  padding-bottom: 24px;
+  :global(.ant-empty-description) {
+    color: rgba(8, 8, 10, 0.45);
+  }
+}

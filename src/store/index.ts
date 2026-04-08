@@ -16,12 +16,23 @@ export interface MenuPermission {
   IOTDM_STORE_MENU: boolean
   DEVICE_BBQGRILL_MONITOR: boolean
   DEVICE_COMBIOVEN_MONITOR: boolean
+  DENGTA_DEMO: boolean
   [key: string]: boolean
 }
 
 interface RealtimeFormState {
   store_id: string
   city_id: string
+}
+
+export interface FoodSafetyReqsState {
+  store_id: string
+  city_id: string
+  start_date: string
+  end_date: string
+  abnormal_choices: number[]
+  /** 门店评估风险等级筛选，与 dengta-pc 一致传 store_risk_level */
+  store_risk_levels: number[]
 }
 
 interface AppState {
@@ -35,12 +46,17 @@ interface AppState {
   _realtimeStoreName: string
   _realtimeAbnormal: number[]
 
+  _foodSafetyReqs: FoodSafetyReqsState | null
+  _foodSafetyStoreName: string
+  _foodSafetyDateType: number
+
   getUserMenuPermissions: () => Promise<void>
   getAppUsagePermission: (appToken: string) => Promise<void>
   getIsIntelligentWashUser: () => Promise<void>
   setLoading: (loading: boolean) => void
   clearAllState: () => void
   clearRealtimeState: () => void
+  clearFoodSafetyState: () => void
 }
 
 const initialMenuPermission: MenuPermission = {
@@ -57,6 +73,7 @@ const initialMenuPermission: MenuPermission = {
   IOTDM_STORE_MENU: false,
   DEVICE_BBQGRILL_MONITOR: false,
   DEVICE_COMBIOVEN_MONITOR: false,
+  DENGTA_DEMO: false,
 }
 
 export const useAppStore = create<AppState>((set) => ({
@@ -69,6 +86,10 @@ export const useAppStore = create<AppState>((set) => ({
   _realtimeForm: null,
   _realtimeStoreName: "",
   _realtimeAbnormal: [],
+
+  _foodSafetyReqs: null,
+  _foodSafetyStoreName: "",
+  _foodSafetyDateType: 2,
 
   async getUserMenuPermissions() {
     const res = await getPassportConfig()
@@ -114,6 +135,14 @@ export const useAppStore = create<AppState>((set) => ({
     })
   },
 
+  clearFoodSafetyState() {
+    set({
+      _foodSafetyReqs: null,
+      _foodSafetyStoreName: "",
+      _foodSafetyDateType: 2,
+    })
+  },
+
   clearAllState() {
     set({
       permissions: {},
@@ -124,6 +153,9 @@ export const useAppStore = create<AppState>((set) => ({
       _realtimeForm: null,
       _realtimeStoreName: "",
       _realtimeAbnormal: [],
+      _foodSafetyReqs: null,
+      _foodSafetyStoreName: "",
+      _foodSafetyDateType: 2,
     })
   },
 }))

@@ -1,0 +1,281 @@
+@font-face {
+  font-family: "DIN Alternate Bold";
+  src: url("@/assets/font/DIN Alternate Bold.ttf");
+}
+
+.elecMonitorStoreDetail {
+  width: 100%;
+  background-color: #f5f7fa;
+  overflow-y: auto;
+
+  .storeHeadImg {
+    width: 100%;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .storeInfo {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .storeName {
+      font-size: 18px;
+      font-weight: bold;
+      color: rgba(8, 8, 10, 0.96);
+    }
+
+    .storeAddr {
+      margin-left: 10px;
+      font-size: 16px;
+      color: #909399;
+    }
+  }
+
+  .dateRadioBox {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .innerPad {
+    padding: 0 8px;
+  }
+
+  .dataTitleBox {
+    display: flex;
+    align-items: center;
+
+    .sideBar {
+      height: 20px;
+      width: 4px;
+      border-radius: 2px;
+      background-color: #3867ff;
+    }
+
+    .dataTitle {
+      font-size: 18px;
+      color: rgba(8, 8, 10, 0.96);
+      font-weight: bold;
+      margin-left: 8px;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .exportOpt {
+      display: flex;
+      align-items: center;
+      color: #3867ff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 400;
+
+      .exportIcon {
+        width: 20px;
+        height: 20px;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .titleRowBetween {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .elecMonitorOverView {
+    border-radius: 8px;
+    width: 100%;
+    padding: 28px;
+    margin-top: 8px;
+    background-color: #fff;
+
+    .unitTip {
+      margin-top: 20px;
+      color: #909399;
+      font-size: 16px;
+    }
+
+    .dataCategory {
+      display: flex;
+      flex-direction: row;
+      margin-top: 12px;
+      flex-wrap: wrap;
+
+      .topIcon {
+        width: 22px;
+        height: 10px;
+        margin-left: 4px;
+      }
+
+      .data {
+        border-right: 1px dotted #dcdfe6;
+        padding-right: 20px;
+        margin-right: 20px;
+
+        .title {
+          display: flex;
+          align-items: center;
+          color: #08080a;
+          font-size: 16px;
+        }
+
+        .dataNum {
+          font-family: "DIN Alternate Bold", "Helvetica Neue", sans-serif;
+          font-size: 24px;
+          margin-top: 5px;
+          color: rgba(8, 8, 10, 0.8);
+        }
+      }
+    }
+
+    .deviceFilterWrap {
+      margin-top: 24px;
+
+      .filterItem {
+        display: inline-flex;
+        align-items: center;
+        padding: 9px 12px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        border-radius: 4px;
+        font-size: 16px;
+        color: rgba(8, 8, 10, 0.45);
+        background: #f5f7fa;
+        cursor: pointer;
+
+        .filterIcon {
+          width: 8px;
+          height: 8px;
+          margin-right: 8px;
+          border-radius: 50%;
+        }
+      }
+
+      .filterItemActive {
+        color: #08080a;
+        background: #f5f7fa;
+      }
+    }
+
+    .chartBox {
+      margin-top: 8px;
+      background-color: #fff;
+
+      .lineChart {
+        width: 100%;
+        height: 380px;
+      }
+    }
+
+    .pageClass {
+      display: flex;
+      justify-content: center;
+      margin-top: 28px;
+    }
+
+    :global(.ant-table-cell.dateCell) {
+      font-weight: 400;
+      font-size: 16px;
+      color: rgba(8, 8, 10, 0.8);
+      background: #fff;
+      padding: 16px 0;
+    }
+
+    .chargeNumCell,
+    .totalNumCell {
+      font-size: 16px;
+      font-family: "DIN Alternate Bold", "Helvetica Neue", sans-serif;
+      margin: 0;
+    }
+
+    .totalNumCell {
+      color: rgba(8, 8, 10, 0.96);
+    }
+
+    .chargeNumCell {
+      color: rgba(8, 8, 10, 0.8);
+    }
+
+    :global(.ant-table-cell.bgCell) {
+      background: #fffcf8;
+    }
+
+    :global(.ant-table-cell.bgCellClass) {
+      background: #fffcf8 !important;
+      padding: 16px 0;
+    }
+
+    :global(.ant-table-cell.cellClass) {
+      color: rgba(8, 8, 10, 0.8);
+      font-weight: 400;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    :global(.ant-table-cell.usageCellClass) {
+      color: rgba(8, 8, 10, 0.8);
+      font-weight: 400;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    .empty {
+      color: #909399;
+      font-family: "DIN Alternate Bold", "Helvetica Neue", sans-serif;
+    }
+
+    .numberStyle {
+      color: rgba(8, 8, 10, 0.8);
+      font-family: "DIN Alternate Bold", "Helvetica Neue", sans-serif;
+    }
+
+    .moreFilled {
+      display: inline-flex;
+      color: #3867ff;
+      font-weight: bold;
+      line-height: 1px;
+      height: 8px;
+      padding: 0;
+      font-size: 16px;
+      vertical-align: top;
+      position: relative;
+      top: 4px;
+      left: 1px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .tooltipPeriod {
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+    }
+  }
+
+  .tables {
+    margin-top: 8px;
+
+    :global(.ant-table-thead > tr > th) {
+      background: #f5f7fa !important;
+      color: rgba(8, 8, 10, 0.8);
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  .usageTables {
+    margin-top: 24px;
+  }
+
+  .tipIcon {
+    transform: translateY(-1px);
+    margin-left: 4px;
+    cursor: help;
+    width: 18px;
+    height: 18px;
+  }
+}

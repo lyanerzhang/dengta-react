@@ -51,5 +51,23 @@
     .userInfo {
       margin-left: 16px;
     }
+
+    .demoModeBtn {
+      width: 100px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      border: 1px solid rgba(76, 119, 184, 0.7);
+      font-size: 14px;
+      color: #4c77b8;
+      cursor: pointer;
+
+      &:hover {
+        color: #3867ff;
+        border: 1px solid rgba(56, 103, 255, 0.7);
+      }
+    }
   }
 }

@@ -1,0 +1,235 @@
+// 与 dengta-pc foodSafetyRisk.vue 对齐的默认样式
+
+.foodSafetyRiskContent {
+  width: 100%;
+  background-color: #f5f7fa;
+  padding: 8px 8px 0;
+
+  .ft16 {
+    font-size: 16px;
+  }
+
+  .dataTitleBox {
+    display: flex;
+    align-items: center;
+
+    .sideBar {
+      height: 20px;
+      width: 4px;
+      border-radius: 2px;
+      background-color: #3867ff;
+      flex-shrink: 0;
+    }
+
+    .dataTitle {
+      font-size: 18px;
+      color: rgba(8, 8, 10, 0.96);
+      font-weight: bold;
+      margin: 0 0 0 8px;
+      line-height: 1.25;
+    }
+  }
+
+  .abnormalDataTable {
+    margin-top: 8px;
+    border-radius: 8px;
+    width: 100%;
+    min-height: calc(100vh - 300px);
+    background-color: #fff;
+    padding: 28px;
+    box-sizing: border-box;
+
+    .abnormalTitle {
+      flex-shrink: 0;
+      font-size: 16px;
+      color: #303133;
+      margin-right: 10px;
+      line-height: 32px;
+    }
+
+    .filterBlock {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      row-gap: 8px;
+    }
+
+    .checkBtnBox {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    // 模拟 el-checkbox-button：className 在 label.ant-checkbox-wrapper 上
+    .checkBtn {
+      margin-inline-start: 0 !important;
+      margin-inline-end: 0 !important;
+      margin-bottom: 0;
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.375;
+      color: #606266;
+      background-color: #f5f7fa;
+      border: none !important;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.15s ease, background-color 0.15s ease;
+
+      :global(.ant-checkbox) {
+        display: none;
+      }
+
+      :global(.ant-checkbox + span) {
+        padding: 0;
+      }
+
+      &:global(.ant-checkbox-wrapper:hover:not(.ant-checkbox-wrapper-disabled)) {
+        color: #3867ff;
+        background-color: rgba(56, 103, 255, 0.06);
+      }
+
+      &:global(.ant-checkbox-wrapper-checked) {
+        color: #3867ff;
+        background-color: rgba(56, 103, 255, 0.06);
+      }
+
+      &:global(.ant-checkbox-wrapper-disabled) {
+        color: #c0c4cc;
+        background-color: #f5f7fa;
+        cursor: not-allowed;
+      }
+
+      &:global(.ant-checkbox-wrapper-disabled:hover) {
+        color: #c0c4cc;
+        background-color: #f5f7fa;
+      }
+    }
+
+    .filterRow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      gap: 12px;
+    }
+
+    .dateRadioWrap {
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+
+    .filterItem {
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+
+      .filterTitle {
+        flex: 0 0 auto;
+        color: rgba(8, 8, 10, 0.8);
+        font-size: 16px;
+        margin-right: 8px;
+      }
+
+      :global(.ant-input-affix-wrapper),
+      :global(.ant-input) {
+        min-height: 32px;
+        font-size: 14px;
+      }
+
+      :global(.ant-select-selector) {
+        height: 32px !important;
+        align-items: center;
+      }
+
+      :global(.ant-select) {
+        font-size: 14px;
+      }
+    }
+
+    .filterActions {
+      display: flex;
+      align-items: center;
+      margin-left: 8px;
+      gap: 8px;
+    }
+
+    .searchBtn {
+      min-width: 72px;
+      height: 32px;
+      padding: 0 18px;
+      font-size: 16px;
+      color: #fff !important;
+      background: #3867ff !important;
+      border: none !important;
+    }
+
+    .resetBtn {
+      min-width: 72px;
+      height: 32px;
+      padding: 0 18px;
+      font-size: 16px;
+      color: #606266 !important;
+      background: #fff !important;
+      border: 1px solid #dcdfe6 !important;
+
+      &:hover {
+        color: #3867ff !important;
+        border-color: #3867ff !important;
+      }
+    }
+
+    .tables {
+      margin-top: 24px;
+
+      :global(.ant-table-thead > tr > th) {
+        background: #f5f7fa;
+        color: rgba(8, 8, 10, 0.8);
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      :global(.ant-table-tbody > tr > td) {
+        font-size: 16px;
+        padding: 16px 8px;
+        color: rgba(8, 8, 10, 0.8);
+      }
+    }
+
+    .storeName {
+      font-size: 16px;
+      color: #3867ff;
+    }
+
+    .storeAddr {
+      font-size: 14px;
+      color: #909399;
+      line-height: 20px;
+    }
+
+    .numericalValue {
+      font-size: 18px;
+      color: rgba(8, 8, 10, 0.8);
+      font-family: "DIN Alternate Bold", "Helvetica Neue", sans-serif;
+    }
+
+    .noData {
+      color: rgba(144, 147, 153, 0.8);
+    }
+
+    .red {
+      color: #e72323;
+    }
+
+    .pageClass {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+  }
+}

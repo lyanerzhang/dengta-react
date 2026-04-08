@@ -1,6 +1,7 @@
 import axios, { AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from "axios"
 import { message as antdMessage } from "antd"
 import globalAxiosParams from "@/utils/globalAxiosParams"
+import { getDemoMockBody, isDemoPath } from "@/utils/demoMock"
 
 interface CustomAxiosConfig extends InternalAxiosRequestConfig {
   isMock?: boolean
@@ -25,6 +26,26 @@ let errorData = false
 service.interceptors.request.use(
   (config: CustomAxiosConfig) => {
     responseError = false
+
+    /** 与 dengta-pc 一致：体验版 `/demo` 下对已有 mock 的接口不走真实网络 */
+    if (isDemoPath() && config.url) {
+      const mockBody = getDemoMockBody(
+        config.url,
+        (config.params || {}) as Record<string, unknown>,
+        config.data,
+      )
+      if (mockBody) {
+        config.adapter = () =>
+          Promise.resolve({
+            data: mockBody,
+            status: 200,
+            statusText: "OK",
+            headers: { "content-type": "application/json" },
+            config: config as InternalAxiosRequestConfig,
+          })
+        return config
+      }
+    }
 
     if (config.isMock && config.mock) {
       config.url = config.mock
@@ -87,7 +108,9 @@ service.interceptors.response.use(
       localStorage.removeItem("userToken")
       localStorage.removeItem("userName")
       localStorage.removeItem("userUnionId")
-      window.location.href = "/userLogin"
+      const loginPath =
+        typeof window !== "undefined" && window.location.pathname.includes("/demo") ? "/demo/userLogin" : "/userLogin"
+      window.location.href = loginPath
       return Promise.reject("登录过期，请重新登录")
     } else {
       if (errorData) {

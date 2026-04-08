@@ -100,6 +100,17 @@ export function getTicketListByType(data: any) {
   } as any)
 }
 
+/** 灯塔云-洗碗机-服务信息列表（与 dengta-pc 一致） */
+export function getTicketListServiceInfo(data: any) {
+  return request({
+    url: "/ec/itr/ticket/ticket/filter/ticket/list/service_info",
+    data,
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    noLoading: true,
+  } as any)
+}
+
 export function getCityList(params: any): any {
   return request({ url: "/ecmall/get/city/list.json", params, method: "get", noLoading: true } as any)
 }

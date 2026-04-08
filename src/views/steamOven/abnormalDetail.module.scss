@@ -1,0 +1,122 @@
+.abnormalDetailContent {
+  display: flex;
+  flex-direction: row;
+
+  .anchorNav {
+    position: relative;
+    flex-shrink: 0;
+
+    .activeBar {
+      position: absolute;
+      right: -2px;
+      top: 0;
+      width: 2px;
+      height: 40px;
+      background: #3867ff;
+      opacity: 1;
+    }
+
+    .anchorItem {
+      font-weight: 400;
+      font-size: 16px;
+      color: rgba(8, 8, 10, 0.8);
+      padding: 10px 22px 10px 0;
+      text-align: right;
+      cursor: pointer;
+
+      &:hover {
+        font-weight: bold;
+        color: rgba(8, 8, 10, 0.96);
+      }
+    }
+
+    .anchorActive {
+      position: relative;
+      font-weight: bold;
+      color: rgba(8, 8, 10, 0.96);
+    }
+
+    .dinNumber {
+      font-family: "DIN Alternate Bold", "Helvetica Neue", sans-serif;
+    }
+
+    .dataNumWarn {
+      color: #e72323;
+    }
+
+    .red {
+      color: #e72323;
+    }
+  }
+
+  .detailCon {
+    flex: 1;
+    height: 536px;
+    overflow-y: auto;
+    border-left: 2px solid #dcdfe6;
+
+    .detailSection {
+      &:first-child .sectionHeader {
+        padding-top: 0;
+      }
+
+      .sectionHeader {
+        min-height: 30px;
+        padding: 0 0 12px 20px;
+
+        .sectionTitle {
+          font-weight: bold;
+          font-size: 16px;
+          color: rgba(8, 8, 10, 0.96);
+        }
+      }
+
+      .detailItemWrap {
+        padding-bottom: 8px;
+
+        &:last-child {
+          padding-bottom: 20px;
+        }
+      }
+
+      .emptyState,
+      .detailItem {
+        width: 100%;
+        max-width: 532px;
+        box-sizing: border-box;
+        padding: 12px;
+        font-size: 16px;
+        margin-left: 20px;
+      }
+
+      .emptyState {
+        color: #909399;
+        background: #f5f7fa;
+        border-radius: 4px;
+      }
+
+      .detailItem {
+        border-radius: 4px;
+        background: rgba(231, 35, 35, 0.03);
+        border: 1px solid rgba(231, 35, 35, 0.05);
+
+        .timeInfo {
+          font-size: 16px;
+          color: rgba(8, 8, 10, 0.8);
+        }
+
+        .actionInfo {
+          margin-top: 4px;
+          font-size: 14px;
+          color: #909399;
+        }
+      }
+    }
+  }
+}
+
+.modalHeader {
+  font-size: 18px;
+  color: rgba(8, 8, 10, 0.96);
+  font-weight: 400;
+}

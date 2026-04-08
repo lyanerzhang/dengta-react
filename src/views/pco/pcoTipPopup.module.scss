@@ -1,0 +1,91 @@
+.tipPopup {
+  display: flex;
+  align-items: center;
+}
+
+.bellIcon {
+  cursor: pointer;
+  font-size: 18px;
+  margin-right: 22px;
+  transform: translateY(1px);
+  &:hover {
+    color: #3867ff;
+  }
+}
+
+.dialogTitle {
+  height: 64px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 8px 20px 0 rgba(177, 197, 197, 0.08);
+}
+
+.titleClass {
+  font-size: 18px;
+  color: rgba(8, 8, 10, 0.96);
+}
+
+.hasRead {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  color: #3867ff;
+  cursor: pointer;
+}
+
+.closeIcon {
+  cursor: pointer;
+  color: #909399;
+  &:hover {
+    color: #3867ff;
+  }
+}
+
+.scrollBody {
+  overflow-y: auto;
+  height: calc(70vh - 80px);
+}
+
+.tipItem {
+  padding: 20px 48px;
+  border-bottom: 1px solid #f2f3f5;
+  font-size: 16px;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    background: #f9fafc;
+  }
+}
+
+.storeName {
+  color: rgba(8, 8, 10, 0.96);
+  font-weight: bold;
+  margin: 0;
+}
+
+.tipContent {
+  color: rgba(8, 8, 10, 0.8);
+  margin-top: 4px;
+}
+
+.redDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #ff2626;
+  position: absolute;
+  left: 24px;
+  top: 26px;
+  margin: 0;
+}
+
+.bottomTip {
+  text-align: center;
+  color: #909399;
+  margin-top: 20px;
+  font-size: 14px;
+  margin-bottom: 60px;
+}

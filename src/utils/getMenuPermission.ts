@@ -39,5 +39,6 @@ export function getRedirectPath(menuPermission: MenuPermission): string | false 
   if (menuPermission.IOTDM_BRAND_MENU) return "/userData/brandMenuManage"
   if (menuPermission.IOTDM_STORE_MENU) return "/userData/storeMenuManage"
   if (menuPermission.DEVICE_ENERGY_MONITOR) return "/userData/elecMonitorStoreList"
+  if (menuPermission.DENGTA_DEMO) return "/userData/dengtaDemo"
   return false
 }

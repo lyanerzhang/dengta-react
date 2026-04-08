@@ -40,3 +40,10 @@
     left: 265px;
   }
 }
+
+/** PCO 服务信息等：仅「近7/14/30」三档，无日历图标时最后一格去掉右侧竖线 */
+.radioBtn.radioBtnThreeOnly {
+  .radioItem:last-child {
+    border-right: none;
+  }
+}
