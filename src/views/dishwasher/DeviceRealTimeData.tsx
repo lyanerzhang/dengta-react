@@ -4,7 +4,7 @@ import { Table, Select, Button, AutoComplete, Checkbox, message } from "antd"
 import { ReloadOutlined, SearchOutlined } from "@ant-design/icons"
 import { getVisibleCityList, getVisibleStoreList, getWishdasherLastestReport } from "@/api/dishwasher"
 import { formatCurrentDateTime } from "@/utils/timeFormat"
-import { useAppStore } from "@/store"
+import { useAppDispatch, setRealtimeNavState } from "@/store"
 import type { ColumnsType } from "antd/es/table"
 import styles from "./deviceRealTimeData.module.scss"
 
@@ -17,7 +17,7 @@ const ABNORMAL_OPTIONS = [
 
 export default function DeviceRealTimeData() {
   const navigate = useNavigate()
-  const store = useAppStore()
+  const dispatch = useAppDispatch()
 
   const [abnormalChoices, setAbnormalChoices] = useState<number[]>([])
   const [storeName, setStoreName] = useState("")
@@ -131,11 +131,13 @@ export default function DeviceRealTimeData() {
   }
 
   const toDetail = (record: any) => {
-    useAppStore.setState({
-      _realtimeForm: { store_id: storeId, city_id: cityId },
-      _realtimeStoreName: storeName,
-      _realtimeAbnormal: abnormalChoices,
-    } as any)
+    dispatch(
+      setRealtimeNavState({
+        _realtimeForm: { store_id: storeId, city_id: cityId },
+        _realtimeStoreName: storeName,
+        _realtimeAbnormal: abnormalChoices,
+      })
+    )
     const order = encodeURIComponent(String(record.order_number ?? ""))
     navigate(`/userData/storeDetail?order_number=${order}`)
   }

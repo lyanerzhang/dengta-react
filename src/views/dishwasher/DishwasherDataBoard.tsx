@@ -15,7 +15,7 @@ import {
   getBoardStoreFoodSafetyRisk,
   getBoardStoreEnergyOverview,
 } from "@/api/dishwasher"
-import { useAppStore } from "@/store"
+import { useAppSelector } from "@/store"
 import { formatDateToChinese } from "@/utils/timeFormat"
 import DateRadio from "@/components/DateRadio"
 import styles from "./dishwasherDataBoard.module.scss"
@@ -61,7 +61,7 @@ function IntelWashTooltip({ className }: { className?: string }) {
 
 export default function DishwasherDataBoard() {
   const navigate = useNavigate()
-  const isIntelligentWashUser = useAppStore((s) => s.isIntelligentWashUser === true)
+  const isIntelligentWashUser = useAppSelector((s) => s.app.isIntelligentWashUser === true)
 
   const [monthReqs] = useState(monthRange)
   const [loading, setLoading] = useState(false)

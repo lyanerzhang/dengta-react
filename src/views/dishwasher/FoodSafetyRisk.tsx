@@ -9,7 +9,7 @@ import {
   getVisibleStoreList,
   getFoodSafetyRiskDeatil,
 } from "@/api/dishwasher"
-import { useAppStore } from "@/store"
+import { store, useAppDispatch, useAppSelector, setFoodSafetyNavState } from "@/store"
 import type { ColumnsType } from "antd/es/table"
 import {
   getRiskLevelText,
@@ -66,7 +66,8 @@ function LockHeader({ children }: { children: ReactNode }) {
 
 export default function FoodSafetyRisk() {
   const navigate = useNavigate()
-  const isIntelligentWashUser = useAppStore((s) => s.isIntelligentWashUser === true)
+  const dispatch = useAppDispatch()
+  const isIntelligentWashUser = useAppSelector((s) => s.app.isIntelligentWashUser === true)
 
   const [hydrated, setHydrated] = useState(false)
   const [storeName, setStoreName] = useState("")
@@ -90,7 +91,7 @@ export default function FoodSafetyRisk() {
   }, [reqs])
 
   useEffect(() => {
-    const st = useAppStore.getState()
+    const st = store.getState().app
     const sp = new URLSearchParams(window.location.search)
     if (st._foodSafetyReqs) {
       const fr = st._foodSafetyReqs
@@ -240,11 +241,13 @@ export default function FoodSafetyRisk() {
   }
 
   const toDetail = (info: any) => {
-    useAppStore.setState({
-      _foodSafetyReqs: { ...reqsRef.current },
-      _foodSafetyStoreName: storeName,
-      _foodSafetyDateType: dateTypeRef.current,
-    })
+    dispatch(
+      setFoodSafetyNavState({
+        _foodSafetyReqs: { ...reqsRef.current },
+        _foodSafetyStoreName: storeName,
+        _foodSafetyDateType: dateTypeRef.current,
+      })
+    )
     const dt = dateTypeRef.current
     const q = new URLSearchParams({
       order_number: String(info.order_number ?? ""),

@@ -4,7 +4,13 @@ import { Input, Checkbox, Modal, message } from "antd"
 import { PhoneOutlined, SafetyCertificateOutlined } from "@ant-design/icons"
 import { getLoginSendSms, loginSystem, checkUserInfo } from "@/api/dishwasher"
 import { loginByCode, getLoginSendSmsInApp } from "@/api/public"
-import { useAppStore } from "@/store"
+import {
+  store,
+  useAppDispatch,
+  getUserMenuPermissions,
+  getIsIntelligentWashUser,
+  triggerLoading,
+} from "@/store"
 import { getRedirectPath } from "@/utils/getMenuPermission"
 import Footer from "@/components/Footer"
 import toast from "@/components/Toast"
@@ -14,7 +20,7 @@ import styles from "./userLogin.module.scss"
 export default function UserLogin() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const store = useAppStore()
+  const dispatch = useAppDispatch()
 
   const [phone, setPhone] = useState("")
   const [code, setCode] = useState("")
@@ -85,9 +91,9 @@ export default function UserLogin() {
   const handleLoginSuccess = async (token: string) => {
     localStorage.setItem("userToken", token)
     await getCheckUserInfo()
-    await store.getUserMenuPermissions()
-    await store.getIsIntelligentWashUser()
-    const redirect = getRedirectPath(useAppStore.getState().menuPermission)
+    await dispatch(getUserMenuPermissions()).unwrap()
+    await dispatch(getIsIntelligentWashUser()).unwrap()
+    const redirect = getRedirectPath(store.getState().app.menuPermission)
     if (redirect) {
       navigate(redirect, { replace: true })
     }
@@ -110,7 +116,7 @@ export default function UserLogin() {
 
   useEffect(() => {
     if (searchParams.get("app_token")) {
-      store.setLoading(true)
+      dispatch(triggerLoading())
     }
     if (searchParams.get("code")) {
       loginByCode({ auth_code: searchParams.get("code") }, appToken)

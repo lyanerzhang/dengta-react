@@ -4,7 +4,7 @@ import Header from "@/components/Header"
 import Menu from "@/components/Menu"
 import Footer from "@/components/Footer"
 import { authService } from "@/api/auth"
-import { useAppStore } from "@/store"
+import { store, clearFoodSafetyState } from "@/store"
 import styles from "./userData.module.scss"
 
 /** 离开食安风险页且非进入门店详情时，清理草稿（对齐 Vue beforeRouteLeave） */
@@ -20,7 +20,7 @@ function FoodSafetyLeaveSync() {
       next !== "/userData/storeDetail" &&
       next !== "/userData/foodSafetyRisk"
     ) {
-      useAppStore.getState().clearFoodSafetyState()
+      store.dispatch(clearFoodSafetyState())
     }
   }, [location.pathname])
   return null

@@ -1,6 +1,6 @@
 import { logoutSys } from "@/api/dishwasher"
 import { message } from "antd"
-import { useAppStore } from "@/store"
+import { store, clearAllState } from "@/store"
 
 export const authService = {
   async globalLogout() {
@@ -10,7 +10,7 @@ export const authService = {
       localStorage.removeItem("userUnionId")
       localStorage.removeItem("userName")
       localStorage.removeItem("imgToken")
-      useAppStore.getState().clearAllState()
+      store.dispatch(clearAllState())
       window.location.href = "/userLogin"
     } catch {
       message.error("退出操作失败")

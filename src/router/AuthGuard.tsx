@@ -1,6 +1,14 @@
 import { useEffect, useState, ReactNode } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
-import { useAppStore } from "@/store"
+import {
+  store,
+  useAppDispatch,
+  useAppSelector,
+  getUserMenuPermissions,
+  getIsIntelligentWashUser,
+  getAppUsagePermission,
+  clearAllState,
+} from "@/store"
 import { getRedirectPath } from "@/utils/getMenuPermission"
 
 interface AuthGuardProps {
@@ -10,13 +18,8 @@ interface AuthGuardProps {
 export default function AuthGuard({ children }: AuthGuardProps) {
   const navigate = useNavigate()
   const location = useLocation()
-  const {
-    menuPermission,
-    getUserMenuPermissions,
-    getIsIntelligentWashUser,
-    getAppUsagePermission,
-    clearAllState,
-  } = useAppStore()
+  const dispatch = useAppDispatch()
+  const menuPermission = useAppSelector((s) => s.app.menuPermission)
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
@@ -26,21 +29,21 @@ export default function AuthGuard({ children }: AuthGuardProps) {
       if (token) {
         if (!menuPermission.isGetPermission) {
           try {
-            await getUserMenuPermissions()
-            await getIsIntelligentWashUser()
+            await dispatch(getUserMenuPermissions()).unwrap()
+            await dispatch(getIsIntelligentWashUser()).unwrap()
             setReady(true)
           } catch {
             clearInfo()
             navigate("/userLogin", { replace: true })
           }
         } else {
-          const st = useAppStore.getState()
+          const st = store.getState().app
           if (st.isIntelligentWashUser === null) {
-            await getIsIntelligentWashUser()
+            await dispatch(getIsIntelligentWashUser()).unwrap()
           }
           setReady(true)
           if (location.pathname === "/userLogin") {
-            const redirect = getRedirectPath(useAppStore.getState().menuPermission)
+            const redirect = getRedirectPath(store.getState().app.menuPermission)
             if (redirect) navigate(redirect, { replace: true })
           }
         }
@@ -49,7 +52,7 @@ export default function AuthGuard({ children }: AuthGuardProps) {
         const appToken = searchParams.get("app_token")
         if (appToken) {
           localStorage.setItem("INTERNAL_APP_TOKEN", encodeURIComponent(appToken))
-          await getAppUsagePermission(encodeURIComponent(appToken))
+          await dispatch(getAppUsagePermission(encodeURIComponent(appToken))).unwrap()
         } else {
           clearInfo()
           if (location.pathname !== "/userLogin" && location.pathname !== "/agreementFile") {
@@ -64,7 +67,7 @@ export default function AuthGuard({ children }: AuthGuardProps) {
       localStorage.removeItem("userUnionId")
       localStorage.removeItem("userName")
       localStorage.removeItem("imgToken")
-      clearAllState()
+      dispatch(clearAllState())
     }
 
     init()

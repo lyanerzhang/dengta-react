@@ -23,7 +23,7 @@ import {
   getPcoLighthouseEnum,
 } from "@/api/pco"
 import { getCityList } from "@/api/mdc"
-import { useAppStore } from "@/store"
+import { useAppSelector } from "@/store"
 import PcoTipPopup from "./PcoTipPopup"
 import styles from "./pcoDataBoard.module.scss"
 
@@ -55,7 +55,7 @@ function hasPositiveCount(v: unknown) {
 }
 
 export default function DataBoard() {
-  const hasPco = useAppStore((s) => Boolean(s.menuPermission?.PCO))
+  const hasPco = useAppSelector((s) => Boolean(s.app.menuPermission?.PCO))
 
   const [serviceOverViewStats, setServiceOverViewStats] = useState<any>({})
   const [form, setForm] = useState({

@@ -5,7 +5,7 @@ import { LockOutlined } from "@ant-design/icons"
 import dayjs from "dayjs"
 import CurrentDateRadio from "@/components/DateRadio/CurrentDateRadio"
 import { getVisibleCityList, getVisibleStoreList, getEnergyDetail } from "@/api/dishwasher"
-import { useAppStore } from "@/store"
+import { useAppSelector } from "@/store"
 import type { ColumnsType } from "antd/es/table"
 import { powerConsumptionAvgStyle, tablewareUnderPlacedRateStyle } from "@/views/dishwasher/utils/energyHelpers"
 import styles from "./energyConsumption.module.scss"
@@ -35,7 +35,7 @@ const defaultReqs = () => ({
 
 export default function EnergyConsumption() {
   const navigate = useNavigate()
-  const isIntelligentWashUser = useAppStore((s) => s.isIntelligentWashUser === true)
+  const isIntelligentWashUser = useAppSelector((s) => s.app.isIntelligentWashUser === true)
 
   const [hydrated, setHydrated] = useState(false)
   const [storeName, setStoreName] = useState("")

@@ -1,8 +1,8 @@
-import { useAppStore, MenuPermission } from "@/store"
+import { store, MenuPermission } from "@/store"
 import MENUMAP, { MenuItem } from "@/enums/menu"
 
 export function verifyPermission(keys: string[] | string): boolean {
-  const menuPermission = useAppStore.getState().menuPermission
+  const menuPermission = store.getState().app.menuPermission
 
   if (Array.isArray(keys)) {
     return keys.some((key) => menuPermission[key])
